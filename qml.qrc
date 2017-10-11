@@ -9,5 +9,6 @@
         <file>images/phone.png</file>
         <file>images/radio.png</file>
         <file>images/Settings.png</file>
+        <file>GridViewDelegate.qml</file>
     </qresource>
 </RCC>
