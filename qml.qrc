@@ -1,11 +1,13 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>../../GPS.png</file>
-        <file>../../radio.png</file>
-        <file>../../phone.png</file>
-        <file>../../media.png</file>
-        <file>../../Settings.png</file>
-        <file>../../main_Screen background.jpg</file>
+        <file>images/GPS.png</file>
+        <file>images/HomeButton.png</file>
+        <file>images/main_Screen background.jpg</file>
+        <file>images/media.png</file>
+        <file>images/navigation.png</file>
+        <file>images/phone.png</file>
+        <file>images/radio.png</file>
+        <file>images/Settings.png</file>
     </qresource>
 </RCC>

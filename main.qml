@@ -19,7 +19,7 @@ Window {
     Image
     {   id:background
         anchors.fill: parent
-        source: "qrc:/../../main_Screen background.jpg"
+        source: "qrc:/images/main_Screen background.jpg"
     }
 
 
@@ -60,23 +60,23 @@ Window {
 
         gridview.model.append ({
             name: "Radio",
-            portrait: ":/../../radio.png"
+            portrait: "qrc:/images/radio.png"
         });
         gridview.model.append ({
             name: "Media Player",
-           portrait: ":/../../media.png"
+           portrait: "qrc:/images/media.png"
         });
         gridview.model.append ({
             name: "Phone",
-            portrait: ":/../../phone.png"
+            portrait: "qrc:/images/phone.png"
         });
         gridview.model.append ({
             name: "Navigation",
-            portrait: ":/../../GPS.png"
+            portrait: "qrc:/images/GPS.png"
         });
         gridview.model.append ({
             name: "Setting",
-           // portrait: ":/../../Settings.png"
+           // portrait: "qrc:/images/Settings.png"
         });
     }
 
@@ -177,7 +177,7 @@ Window {
 
 //        anchors.leftMargin:root.width/13
 
-//        source: "qrc:/../../radio.png"
+//        source: "qrcqrc:/images/radio.png"
 //        width:root.width/4
 //        height:root.height/2.8
 
@@ -201,7 +201,7 @@ Window {
 //        anchors.topMargin: root.height/15.2
 //        anchors.left: parent.left
 //        anchors.leftMargin: root.width/2.4
-//        source: "qrc:/../../media.png"
+//        source: "qrcqrc:/images/media.png"
 //        width:root.width/4.5
 //        height: root.height/3
 //        Text
@@ -224,7 +224,7 @@ Window {
 //    anchors.topMargin: root.height/15.2
 //    anchors.left: parent.left
 //    anchors.leftMargin: root.width/1.4
-//    source: "qrc:/../../phone.png"
+//    source: "qrcqrc:/images/phone.png"
 //    width:root.width/4.5
 //    height: root.height/2.6
 //    Text
@@ -247,7 +247,7 @@ Window {
 //    anchors.topMargin: root.height/1.86
 //    anchors.left: parent.left
 //    anchors.leftMargin: root.width/10.6
-//    source: "qrc:/../../GPS.png"
+//    source: "qrcqrc:/images/GPS.png"
 //    width:root.width/4.8
 //    height: root.height/2.9
 //    Text
@@ -270,7 +270,7 @@ Window {
 //        anchors.topMargin: root.height/1.86
 //        anchors.left: parent.left
 //        anchors.leftMargin: root.width/2.46
-//        source: "qrc:/../../Settings.png"
+//        source: "qrcqrc:/images/Settings.png"
 //        width: root.width/4.3
 //        height: root.height/2.8
 //        Text
