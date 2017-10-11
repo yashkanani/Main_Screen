@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../../GPS.png</file>
+        <file>../../radio.png</file>
+        <file>../../phone.png</file>
+        <file>../../media.png</file>
+        <file>../../Settings.png</file>
+        <file>../../main_Screen background.jpg</file>
+    </qresource>
+</RCC>
