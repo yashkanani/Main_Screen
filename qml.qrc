@@ -7,5 +7,6 @@
         <file>../../media.png</file>
         <file>../../Settings.png</file>
         <file>../../main_Screen background.jpg</file>
+        <file>GridViewDelegate.qml</file>
     </qresource>
 </RCC>

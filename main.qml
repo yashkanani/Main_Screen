@@ -53,6 +53,7 @@ Window
         color: "#2b2f3b"
     }
 
+// Image path need to be change according to directory
 
     Component.onCompleted:  {
 
@@ -82,26 +83,14 @@ Window
     Component
     {
         id:contactDelegate
-        Item
+
+        GridViewDelegate
         {
-            id:itemId
-            width: gridview.cellWidth
-            height: gridview.cellHeight
-            anchors.margins: 12.5
-            Image
-            {
-                id: myIcon;
-                anchors.verticalCenter: parent.verticalCenter;
-                anchors.horizontalCenter: parent.horizontalCenter;
-                source: portrait
-            }
-            Text
-            {
-                font.pixelSize: root.width/35
-                color: "#34495E"
-                anchors { bottom: parent.bottom;  horizontalCenter: parent.horizontalCenter }
-                text: name
-            }
+            cell_Width: gridview.cellWidth
+            cell_Height: gridview.cellHeight
+            root_width: root.width
+            image_path: portrait
+            text_name: name
         }
     }
 
