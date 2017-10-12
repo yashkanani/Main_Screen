@@ -15,7 +15,7 @@ Window
     Image
     {   id:background
         anchors.fill: parent
-        source: "qrc:/../../main_Screen background.jpg"
+        source: "/Resized_images/main_Screen background.jpg"
     }
 
 
@@ -59,23 +59,23 @@ Window
 
         gridview.model.append ({
                                    name: "Radio",
-                                   portrait: ":/../../radio.png"
+                                   portrait: "/Resized_images/radio.png"
                                });
         gridview.model.append ({
                                    name: "Media Player",
-                                   portrait: ":/../../media.png"
+                                   portrait: "/Resized_images/media.png"
                                });
         gridview.model.append ({
                                    name: "Phone",
-                                   portrait: ":/../../phone.png"
+                                   portrait: "/Resized_images/phone.png"
                                });
         gridview.model.append ({
                                    name: "Navigation",
-                                   portrait: ":/../../GPS.png"
+                                   portrait: "/Resized_images/GPS.png"
                                });
         gridview.model.append ({
                                    name: "Setting",
-                                   portrait: ":/../../Settings.png"
+                                   portrait: "/Resized_images/Settings.png"
                                });
     }
 
@@ -91,6 +91,7 @@ Window
             root_width: root.width
             image_path: portrait
             text_name: name
+
         }
     }
 
@@ -105,41 +106,6 @@ Window
         clip: true
         model: ListModel {}
         delegate: contactDelegate
+        focus:true
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
