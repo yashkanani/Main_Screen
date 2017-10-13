@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>imgs/main_Screen background.jpg</file>
+        <file>ListViewMedia.qml</file>
+        <file>imgs/Apps-Home-icon.png</file>
+        <file>imgs/trackbuttons.png</file>
+    </qresource>
+</RCC>
