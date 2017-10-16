@@ -1,13 +1,11 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>GridViewDelegate.qml</file>
-        <file>Resized_images/GPS.png</file>
-        <file>Resized_images/HomeButton.png</file>
-        <file>Resized_images/main_Screen background.jpg</file>
-        <file>Resized_images/media.png</file>
-        <file>Resized_images/phone.png</file>
-        <file>Resized_images/radio.png</file>
-        <file>Resized_images/Settings.png</file>
+        <file>../../GPS.png</file>
+        <file>../../radio.png</file>
+        <file>../../phone.png</file>
+        <file>../../media.png</file>
+        <file>../../Settings.png</file>
+        <file>../../main_Screen background.jpg</file>
     </qresource>
 </RCC>
