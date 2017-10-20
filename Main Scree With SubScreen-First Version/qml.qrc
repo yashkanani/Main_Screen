@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>GridViewDelegate.qml</file>
+        <file>Resized_images/GPS.png</file>
+        <file>Resized_images/HomeButton.png</file>
+        <file>Resized_images/main_Screen background.jpg</file>
+        <file>Resized_images/media.png</file>
+        <file>Resized_images/phone.png</file>
+        <file>Resized_images/radio.png</file>
+        <file>Resized_images/Settings.png</file>
+        <file>MainScreen.qml</file>
+        <file>BackgroundImage.qml</file>
+        <file>RadioScreen.qml</file>
+        <file>PhoneScreen.qml</file>
+        <file>DialScreen.qml</file>
+        <file>Images/if_Caucasian_boss_131511.png</file>
+    </qresource>
+</RCC>
