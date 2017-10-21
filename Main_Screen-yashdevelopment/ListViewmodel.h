@@ -1,7 +1,6 @@
 #ifndef LISTVIEWMODEL_H
 #define LISTVIEWMODEL_H
-#include <QAbstractItemModel>
-#include <QAbstractListModel>
+
 #include <QtCore>
 #include <QtGui>
 

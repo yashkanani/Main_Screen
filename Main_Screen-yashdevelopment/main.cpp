@@ -6,6 +6,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
+#include <RefreshClass.h>
 
 
 
@@ -18,13 +19,16 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    
+    RefreshClass refreshObject;
+    refreshObject.aliasOfengine(&engine);
+
     QObject *object =engine.rootObjects().at(0);
     QQuickWindow* mainWindow =qobject_cast <QQuickWindow*> (object);
 
 
     ListViewmodel item1;
     strcutdata griddata;
+
 
     griddata.icon ="/Resized_images/radio.png";
     griddata.textname="Radio";
@@ -58,6 +62,13 @@ int main(int argc, char *argv[])
         }
 
     }
+
+    QQuickItem* refreshsignalptr = mainWindow->findChild<QQuickItem*>("refreshSignal");
+
+    QObject::connect(refreshsignalptr,
+                     SIGNAL(refresh()),
+                     &refreshObject,
+                     SLOT(onRefreshsignal()));
 
     return app.exec();
 }

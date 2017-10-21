@@ -51,7 +51,7 @@ Window
     Item
     {
      id: refreshItem
-     objectName: "refresh"
+     objectName: "refreshSignal"
 
      signal refresh
     }
