@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>images/main_Screen background.jpg</file>
+        <file>images/Apps-Home-icon.png</file>
+    </qresource>
+</RCC>

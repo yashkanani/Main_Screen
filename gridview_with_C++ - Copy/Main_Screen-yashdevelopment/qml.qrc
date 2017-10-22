@@ -23,6 +23,5 @@
         <file>RadioSettingScreen.qml</file>
         <file>HomeButton.qml</file>
         <file>SliderSetting.qml</file>
-        <file>MediaSettingScreen.qml</file>
     </qresource>
 </RCC>
