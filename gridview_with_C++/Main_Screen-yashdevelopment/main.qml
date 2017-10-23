@@ -16,12 +16,12 @@ Window
         anchors.fill: parent
         source: "/Resized_images/main_Screen background.jpg"
     }
-//    Item
-//    {
-//        id: refreshItem
-//        objectName: "refresh"
-//        signal refresh(var refresh)
-//    }
+    Item
+    {
+        id: refreshItem
+        objectName: "refresh"
+        signal refresh(var refresh)
+    }
     TimeLabel
     {
         time_Width:root.width
@@ -54,6 +54,8 @@ Window
         }
 
         loader.setSource(value)
+        refreshItem.refresh(1);
     }
+
 
 }

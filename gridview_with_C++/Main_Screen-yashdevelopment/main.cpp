@@ -26,6 +26,12 @@ int main(int argc, char *argv[])
     QQuickWindow* mainWindow =qobject_cast <QQuickWindow*> (object);
 
 
+
+
+
+
+
+
     ListViewmodel item1;
     strcutdata radio,media,phone,navigation,setting;
 
@@ -57,7 +63,7 @@ int main(int argc, char *argv[])
         if (gridviewptr != nullptr)
         {
             cout<< "inside the gridview"<<endl;
-            //gridviewptr->setProperty("model",QVariant::fromValue(&item1));
+            gridviewptr->setProperty("model",QVariant::fromValue(&item1));
         }
 
     }

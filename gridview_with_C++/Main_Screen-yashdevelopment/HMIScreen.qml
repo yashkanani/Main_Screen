@@ -10,33 +10,33 @@ Item {
     height: hmiHeight
 
 
-    Component.onCompleted:  {
+//    Component.onCompleted:  {
 
-        gridview.model.append ({
-                                   name: "Radio",
-                                   portrait: "/Resized_images/radio.png"
+//        gridview.model.append ({
+//                                   name: "Radio",
+//                                   portrait: "/Resized_images/radio.png"
 
-                               });
-        gridview.model.append ({
-                                   name: "Media Player",
-                                   portrait: "/Resized_images/media.png"
-                               });
-        gridview.model.append ({
-                                   name: "Phone",
-                                   portrait: "/Resized_images/phone.png"
-                               });
-        gridview.model.append ({
-                                   name: "Navigation",
-                                   portrait: "/Resized_images/GPS.png"
+//                               });
+//        gridview.model.append ({
+//                                   name: "Media Player",
+//                                   portrait: "/Resized_images/media.png"
+//                               });
+//        gridview.model.append ({
+//                                   name: "Phone",
+//                                   portrait: "/Resized_images/phone.png"
+//                               });
+//        gridview.model.append ({
+//                                   name: "Navigation",
+//                                   portrait: "/Resized_images/GPS.png"
 
-                               });
-        gridview.model.append ({
-                                   name: "Setting",
-                                   portrait: "/Resized_images/Settings.png"
-                               });
-        hmiScreen.refreshScreen(1);
+//                               });
+//        gridview.model.append ({
+//                                   name: "Setting",
+//                                   portrait: "/Resized_images/Settings.png"
+//                               });
+//        hmiScreen.refreshScreen(1);
 
-    }
+//    }
 
     Component
     {
