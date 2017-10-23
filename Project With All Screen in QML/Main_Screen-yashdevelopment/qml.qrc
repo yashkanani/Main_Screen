@@ -22,6 +22,7 @@
         <file>SettingScreen.qml</file>
         <file>HomeButton.qml</file>
         <file>Images/Apps-Home-icon.png</file>
-        <file>Slider.qml</file>
+        <file>SliderQMl.qml</file>
+        <file>MediaSettingScreen.qml</file>
     </qresource>
 </RCC>
