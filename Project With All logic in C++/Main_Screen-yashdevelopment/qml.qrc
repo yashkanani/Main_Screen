@@ -24,5 +24,6 @@
         <file>Images/Apps-Home-icon.png</file>
         <file>SliderQMl.qml</file>
         <file>MediaSettingScreen.qml</file>
+        <file>TimesetQML.qml</file>
     </qresource>
 </RCC>

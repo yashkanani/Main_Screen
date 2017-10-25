@@ -6,18 +6,22 @@ import QtQuick.Controls.Styles 1.4
 Item {
     id:settingScreenId
     visible: true
-    width: root.width
-    height: root.height
+    width: 640
+    height: 380
 
     BackgroundImage
     {
         id: backgroundImage
     }
+    TimesetQML
+    {
+        id:timersetQML
+    }
     HomeButton
     {
     id:homebuttonid
+    objectName: "refreshItem"
     }
-
 
     Button{
         id: radio
@@ -195,8 +199,8 @@ Item {
  {
      id:keypadroot
      visible: false
-     width: root.width
-     height: root.height
+     width: 640
+     height: 380
      enabled: false
 
      Label

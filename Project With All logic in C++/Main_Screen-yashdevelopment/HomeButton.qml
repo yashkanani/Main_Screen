@@ -2,9 +2,11 @@ import QtQuick 2.0
 
 Item {
     id:homeButtonItemId
+    objectName: parent.objectName
     visible: true
-    width: root.width
-    height: root.height
+    width: 640
+    height: 380
+    signal refresh
 
     Rectangle
        {
@@ -51,7 +53,8 @@ Item {
            {
                homeIconRectangle.border.color="Transparent"
                homeIconRectangle.opacity=1.0
-               root.changeScreen("MainScreen.qml")
+               homeButtonItemId.refresh()
+               //root.changeScreen("MainScreen.qml")
            }
 
 }

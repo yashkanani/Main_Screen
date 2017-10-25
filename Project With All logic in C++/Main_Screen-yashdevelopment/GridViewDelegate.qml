@@ -11,6 +11,7 @@ Item
     property string text_name: "Text Not Found"
     property bool hover_status: false
 
+    objectName: parent.objectName
     id:itemId
     width: cell_Width
     height: cell_Height
@@ -20,6 +21,7 @@ Item
     Rectangle
     {
         id:rectangle
+        objectName: "rectangle"
         color: "Transparent"
         anchors.fill: itemId
         border.color: Qt.lighter(color, 1.1)
@@ -32,59 +34,28 @@ Item
         anchors.fill: rectangle
         id:mousearea
         hoverEnabled: true;
-
+        objectName: "mousearea"
         onEntered:
         {
-            rectangle.radius=15
-            rectangle.color="lightblue"
+            gridview.entersignal(index)
             rectangle.border.color = "skyblue"
-
         }
 
         onExited:
         {
-            rectangle.color="Transparent"
+            gridview.exitsignal(index)
             rectangle.border.color = "Transparent"
-            myIcon.opacity=1
-            textId.opacity =1
+
         }
 
         onPressed:
         {
-            rectangle.radius=15
-            rectangle.color="lightblue"
-            myIcon.opacity=0.3
-            textId.opacity =0.3
-            console.log("onpressed")
-            console.log(index)
-            switch (textId.text)
-            {
-              case ("Radio"):
-                root.changeScreen("RadioScreen.qml")
-                break
-              case ("Media Player"):
-                root.changeScreen("MediaPlayerScreen.qml")
-                break
-              case ("Phone"):
-                root.changeScreen("PhoneScreen.qml")
-                break
-              case ("Navigation"):
-                root.changeScreen("MediaPlayerScreen.qml")
-                break
-              case ("Setting"):
-                root.changeScreen("SettingScreen.qml")
-                break
-               default:
-                root.changeScreen("MainScreen.qml")
-            }
+            gridview.pressedsignal(index)
         }
 
         onReleased:
         {
-            rectangle.color="lightblue"
-            myIcon.opacity=1
-            textId.opacity = 1
-            console.log("onreleased")
+           gridview.qmlSignalReceived(index)
         }
 
     }
@@ -93,6 +64,7 @@ Item
     Image
     {
         id: myIcon;
+        objectName: "myIcon"
         anchors.verticalCenter: parent.verticalCenter;
         anchors.horizontalCenter: parent.horizontalCenter;
         source: image_path
@@ -102,7 +74,8 @@ Item
     Text
     {
         id:textId
-        font.pixelSize: root.width/35
+        objectName: "textId"
+        font.pixelSize: 640/35
         color: "#34495E"
         anchors { bottom: parent.bottom;  horizontalCenter: parent.horizontalCenter }
         text: text_name

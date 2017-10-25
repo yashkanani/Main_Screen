@@ -5,3 +5,6 @@ Image
     anchors.fill: parent
     source: "/Resized_images/main_Screen background.jpg"
 }
+
+
+

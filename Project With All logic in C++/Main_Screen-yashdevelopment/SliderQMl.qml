@@ -3,8 +3,8 @@ import QtQuick 2.0
 Item {
 
 
-        property int sliderWidth: root.width
-        property int sliderHeight: root.height
+        property int sliderWidth: 640
+        property int sliderHeight: 380
     id: slider; width: sliderWidth/2.5; height: sliderHeight/23.75
        property real value: 1
        onValueChanged: updatePos();

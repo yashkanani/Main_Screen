@@ -8,25 +8,35 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
-#include <RefreshClass.h>
+
+
+
+
+
+
+using namespace std;
 
 
 #include <QObject>
-
+class MainScreenLoad;
 class RefreshClass : public QObject
 {
     Q_OBJECT
+    //Q_PROPERTY(int height READ getHeight WRITE setHeight NOTIFY heightChanged)
 public:
     explicit RefreshClass(QObject *parent = nullptr);
-    void aliasOfengine(QQmlApplicationEngine * enginealis);
-
+    void aliasOfengine(QQmlApplicationEngine  *enginealis);
+    void refreshcall(QQuickItem* pointer);
+    ListViewmodel item1;
 
 public slots:
 
     void onRefreshsignal();
 
 private:
-    QQmlApplicationEngine * enginealisptr;
+    QQmlApplicationEngine*  enginealisptr;
+    QQuickItem* currentScreenPointer;
+
 };
 
 #endif // REFRESHCLASS_H

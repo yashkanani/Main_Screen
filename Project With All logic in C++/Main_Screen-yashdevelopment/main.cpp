@@ -6,8 +6,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
-#include <RefreshClass.h>
-
+#include<ScreenLoader.h>
 
 
 using namespace std;
@@ -19,12 +18,17 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    RefreshClass refreshObject;
-    refreshObject.aliasOfengine(&engine);
 
     QObject *object =engine.rootObjects().at(0);
     QQuickWindow* mainWindow =qobject_cast <QQuickWindow*> (object);
 
+    QQmlComponent* MainScreenQmlComponent=new QQmlComponent(&engine,"qrc:/MainScreen.qml");
+    QQuickItem* MainScreenRootItem=qobject_cast<QQuickItem*>(MainScreenQmlComponent->create());
+    MainScreenRootItem->setParentItem(mainWindow->contentItem());
+
+    ScreenLoader screenLoader;
+    screenLoader.getEnginePointer(&engine,mainWindow);
+    screenLoader.deleteobject(MainScreenRootItem);
 
     ListViewmodel item1;
     strcutdata griddata;
@@ -50,9 +54,9 @@ int main(int argc, char *argv[])
     griddata.textname = "Setting";
     item1.addEntry(griddata);
 
-    QQuickItem* gridviewptr = mainWindow->findChild<QQuickItem*>("gridview");
+   QQuickItem* gridviewptr = MainScreenRootItem->findChild<QQuickItem*>("gridview");
 
-    if(mainWindow != nullptr)
+    if(MainScreenRootItem != nullptr)
     {
         cout<<"inside the main"<<endl;
         if (gridviewptr != nullptr)
@@ -60,15 +64,26 @@ int main(int argc, char *argv[])
             cout<< "inside the gridview"<<endl;
             gridviewptr->setProperty("model",QVariant::fromValue(&item1));
         }
-
     }
 
-    QQuickItem* refreshsignalptr = mainWindow->findChild<QQuickItem*>("refreshSignal");
 
-    QObject::connect(refreshsignalptr,
-                     SIGNAL(refresh()),
-                     &refreshObject,
-                     SLOT(onRefreshsignal()));
+    QObject::connect(gridviewptr,
+                     SIGNAL(qmlSignalReceived(QVariant)),
+                     &screenLoader,
+                     SLOT(onReceived(QVariant)));
+    QObject::connect(gridviewptr,
+                     SIGNAL(pressedsignal(QVariant)),
+                     &screenLoader,
+                     SLOT(onPressed(QVariant)));
+
+    QObject::connect(gridviewptr,
+                     SIGNAL(entersignal(QVariant)),
+                     &screenLoader,
+                     SLOT(onEntered(QVariant)));
+    QObject::connect(gridviewptr,
+                     SIGNAL(exitsignal(QVariant)),
+                     &screenLoader,
+                     SLOT(onExited(QVariant)));
 
     return app.exec();
 }

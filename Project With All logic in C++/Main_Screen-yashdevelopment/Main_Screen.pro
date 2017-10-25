@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     ListViewmodel.cpp \
-    RefreshClass.cpp
+    RefreshClass.cpp \
+    ScreenLoader.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,4 +34,5 @@ DISTFILES +=
 
 HEADERS += \
     ListViewmodel.h \
-    RefreshClass.h
+    RefreshClass.h \
+    ScreenLoader.h

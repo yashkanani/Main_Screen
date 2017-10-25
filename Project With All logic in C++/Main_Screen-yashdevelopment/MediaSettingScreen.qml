@@ -5,8 +5,8 @@ import QtQuick.Controls.Styles 1.4
 
 Item {
 
-    property int itemWidth: root.width
-    property int itemHeight: root.height
+    property int itemWidth: 640
+    property int itemHeight: 380
     id:keypadroot
     visible: true
     width: itemWidth

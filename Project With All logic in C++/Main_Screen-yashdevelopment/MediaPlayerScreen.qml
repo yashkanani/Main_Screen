@@ -5,19 +5,24 @@ import QtQuick.Controls.Styles 1.4
 
 Item {
     id:mediaPlayerScreenID
-    width: root.width
-    height: root.height
+    width: 640
+    height: 380
 
     BackgroundImage
     {
         id: backgroundImage
     }
 
+    TimesetQML
+    {
+        id:timersetQML
+    }
+
     HomeButton
     {
     id:homebuttonid
+    objectName: "refreshItem"
     }
-
     Label
     {
         id:singername

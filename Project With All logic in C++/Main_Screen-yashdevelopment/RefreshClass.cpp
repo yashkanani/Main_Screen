@@ -4,19 +4,31 @@ RefreshClass::RefreshClass(QObject *parent) : QObject(parent)
 {
 
 }
-void RefreshClass:: aliasOfengine(QQmlApplicationEngine * enginealis)
+void RefreshClass:: aliasOfengine(QQmlApplicationEngine  *enginealis)
 {
     enginealisptr = enginealis;
 }
 
-void RefreshClass:: onRefreshsignal()
+void RefreshClass::refreshcall(QQuickItem *pointer)
 {
-    QObject *object =enginealisptr->rootObjects().at(0);
+    currentScreenPointer = pointer;
+}
+
+void RefreshClass:: onRefreshsignal()
+{   cout<<"refresh signal capture"<<endl;
+    delete currentScreenPointer;
+
+
+    QObject *object = enginealisptr->rootObjects().at(0);
     QQuickWindow* mainWindow =qobject_cast <QQuickWindow*> (object);
 
-    ListViewmodel item1;
-    strcutdata griddata;
+    QQmlComponent* MainScreenQmlComponent=new QQmlComponent(enginealisptr,"qrc:/MainScreen.qml");
+    QQuickItem* MainScreenRootItem=qobject_cast<QQuickItem*>(MainScreenQmlComponent->create());
+    MainScreenRootItem->setParentItem(mainWindow->contentItem());
 
+
+
+    strcutdata griddata;
 
     griddata.icon ="/Resized_images/radio.png";
     griddata.textname="Radio";
@@ -38,7 +50,7 @@ void RefreshClass:: onRefreshsignal()
     griddata.textname = "Setting";
     item1.addEntry(griddata);
 
-    QQuickItem* gridviewptr = mainWindow->findChild<QQuickItem*>("gridview");
+    QQuickItem* gridviewptr = MainScreenRootItem->findChild<QQuickItem*>("gridview");
 
     if(mainWindow != nullptr)
     {
@@ -50,4 +62,7 @@ void RefreshClass:: onRefreshsignal()
         }
 
     }
+
+
+
 }
