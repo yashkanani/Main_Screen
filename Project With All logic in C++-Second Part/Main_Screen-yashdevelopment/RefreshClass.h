@@ -8,6 +8,9 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQuickItem>
+#include <ScreenLoader.h>
+
+class ScreenLoader;
 
 
 
@@ -28,6 +31,7 @@ public:
     void aliasOfengine(QQmlApplicationEngine  *enginealis);
     void refreshcall(QQuickItem* pointer);
     ListViewmodel item1;
+    ScreenLoader* screenLoader;
 
 public slots:
 
@@ -36,6 +40,7 @@ public slots:
 private:
     QQmlApplicationEngine*  enginealisptr;
     QQuickItem* currentScreenPointer;
+
 
 };
 

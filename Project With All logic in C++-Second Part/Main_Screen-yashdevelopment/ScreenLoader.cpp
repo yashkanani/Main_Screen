@@ -9,9 +9,10 @@ ScreenLoader::ScreenLoader(QObject *parent) : QObject(parent)
 
 void ScreenLoader::getEnginePointer(QQmlApplicationEngine * engpointer, QQuickWindow * windowptr)
 {
+    refreshObject =new RefreshClass();
     enginerefrenceptr = engpointer;
     mainWindowalisptr = windowptr;
-    refreshObject.aliasOfengine(engpointer);
+    refreshObject->aliasOfengine(engpointer);
 }
 
 void ScreenLoader::deleteobject(QQuickItem  *pointerOfScreen)
@@ -30,9 +31,11 @@ void ScreenLoader::onReceived(QVariant value)
         QQuickItem* radioScreenRootItem = qobject_cast<QQuickItem*>(radioQmlComponent->create());
         radioScreenRootItem->setParentItem(mainWindowalisptr->contentItem());
         delete pointerOfMainScreen;
+        pointerOfMainScreen = nullptr;
         QQuickItem* refreshsignalptr = radioScreenRootItem->findChild<QQuickItem*>("refreshItem");
-        QObject::connect(refreshsignalptr,SIGNAL(refresh()), &refreshObject,SLOT(onRefreshsignal()));
-        refreshObject.refreshcall(radioScreenRootItem);
+        QObject::connect(refreshsignalptr,SIGNAL(refresh()), refreshObject,SLOT(onRefreshsignal()));
+        refreshObject->refreshcall(radioScreenRootItem);
+
     }
     else if(value.toInt() == 1)
      {
@@ -40,9 +43,10 @@ void ScreenLoader::onReceived(QVariant value)
         QQuickItem* mediaScreenRootItem = qobject_cast<QQuickItem*>(mediaQmlComponent->create());
         mediaScreenRootItem->setParentItem(mainWindowalisptr->contentItem());
         delete pointerOfMainScreen;
+        pointerOfMainScreen = nullptr;
         QQuickItem* refreshsignalptr = mediaScreenRootItem->findChild<QQuickItem*>("refreshItem");
-        QObject::connect(refreshsignalptr,SIGNAL(refresh()), &refreshObject,SLOT(onRefreshsignal()));
-        refreshObject.refreshcall(mediaScreenRootItem);
+        QObject::connect(refreshsignalptr,SIGNAL(refresh()), refreshObject,SLOT(onRefreshsignal()));
+        refreshObject->refreshcall(mediaScreenRootItem);
      }
 
     else if(value.toInt() == 2)
@@ -51,9 +55,10 @@ void ScreenLoader::onReceived(QVariant value)
             QQuickItem* phoneScreenRootItem = qobject_cast<QQuickItem*>(phoneQmlComponent->create());
             phoneScreenRootItem->setParentItem(mainWindowalisptr->contentItem());
             delete pointerOfMainScreen;
+            pointerOfMainScreen = nullptr;
             QQuickItem* refreshsignalptr = phoneScreenRootItem->findChild<QQuickItem*>("refreshItem");
-            QObject::connect(refreshsignalptr,SIGNAL(refresh()), &refreshObject,SLOT(onRefreshsignal()));
-            refreshObject.refreshcall(phoneScreenRootItem);
+            QObject::connect(refreshsignalptr,SIGNAL(refresh()), refreshObject,SLOT(onRefreshsignal()));
+            refreshObject->refreshcall(phoneScreenRootItem);
         }
     else if(value.toInt() == 3)
        {
@@ -61,9 +66,10 @@ void ScreenLoader::onReceived(QVariant value)
             QQuickItem* navigationScreenRootItem = qobject_cast<QQuickItem*>(navigationQmlComponent->create());
             navigationScreenRootItem->setParentItem(mainWindowalisptr->contentItem());
             delete pointerOfMainScreen;
+            pointerOfMainScreen = nullptr;
             QQuickItem* refreshsignalptr = navigationScreenRootItem->findChild<QQuickItem*>("refreshItem");
-            QObject::connect(refreshsignalptr,SIGNAL(refresh()), &refreshObject,SLOT(onRefreshsignal()));
-            refreshObject.refreshcall(navigationScreenRootItem);
+            QObject::connect(refreshsignalptr,SIGNAL(refresh()), refreshObject,SLOT(onRefreshsignal()));
+            refreshObject->refreshcall(navigationScreenRootItem);
        }
     else if(value.toInt() == 4)
        {
@@ -71,9 +77,10 @@ void ScreenLoader::onReceived(QVariant value)
             QQuickItem* settingScreenRootItem = qobject_cast<QQuickItem*>(settingQmlComponent->create());
             settingScreenRootItem->setParentItem(mainWindowalisptr->contentItem());
             delete pointerOfMainScreen;
+            pointerOfMainScreen = nullptr;
             QQuickItem* refreshsignalptr = settingScreenRootItem->findChild<QQuickItem*>("refreshItem");
-            QObject::connect(refreshsignalptr,SIGNAL(refresh()), &refreshObject,SLOT(onRefreshsignal()));
-            refreshObject.refreshcall(settingScreenRootItem);
+            QObject::connect(refreshsignalptr,SIGNAL(refresh()), refreshObject,SLOT(onRefreshsignal()));
+            refreshObject->refreshcall(settingScreenRootItem);
        }
    else
         {

@@ -17,6 +17,7 @@ void RefreshClass::refreshcall(QQuickItem *pointer)
 void RefreshClass:: onRefreshsignal()
 {   cout<<"refresh signal capture"<<endl;
     delete currentScreenPointer;
+    currentScreenPointer = nullptr;
 
 
     QObject *object = enginealisptr->rootObjects().at(0);
@@ -26,8 +27,9 @@ void RefreshClass:: onRefreshsignal()
     QQuickItem* MainScreenRootItem=qobject_cast<QQuickItem*>(MainScreenQmlComponent->create());
     MainScreenRootItem->setParentItem(mainWindow->contentItem());
 
-
-
+    screenLoader = new ScreenLoader();
+    screenLoader->getEnginePointer(enginealisptr,mainWindow);
+    screenLoader->deleteobject(MainScreenRootItem);
     strcutdata griddata;
 
     griddata.icon ="/Resized_images/radio.png";
@@ -63,6 +65,23 @@ void RefreshClass:: onRefreshsignal()
 
     }
 
+    QObject::connect(gridviewptr,
+                     SIGNAL(qmlSignalReceived(QVariant)),
+                     screenLoader,
+                     SLOT(onReceived(QVariant)));
+    QObject::connect(gridviewptr,
+                     SIGNAL(pressedsignal(QVariant)),
+                     screenLoader,
+                     SLOT(onPressed(QVariant)));
+
+    QObject::connect(gridviewptr,
+                     SIGNAL(entersignal(QVariant)),
+                     screenLoader,
+                     SLOT(onEntered(QVariant)));
+    QObject::connect(gridviewptr,
+                     SIGNAL(exitsignal(QVariant)),
+                     screenLoader,
+                     SLOT(onExited(QVariant)));
 
 
 }

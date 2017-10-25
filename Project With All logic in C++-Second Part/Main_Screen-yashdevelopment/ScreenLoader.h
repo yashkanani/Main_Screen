@@ -11,6 +11,8 @@
 #include <QQmlContext>
 #include "RefreshClass.h"
 
+class RefreshClass;
+
 using namespace std;
 
 class ScreenLoader : public QObject
@@ -36,7 +38,7 @@ private:
     QQuickItem* gridrect;
     QQuickItem* gridtext;
     QQuickItem* gridicon;
-    RefreshClass refreshObject;
+    RefreshClass *refreshObject;
 
 };
 
